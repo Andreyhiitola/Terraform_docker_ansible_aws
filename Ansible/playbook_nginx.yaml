@@ -1,0 +1,6 @@
+---
+     
+- hosts: nginx_web_server   
+  become: yes
+  roles:
+    - nginx_ubuntu
