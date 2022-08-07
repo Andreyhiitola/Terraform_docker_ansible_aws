@@ -4,3 +4,12 @@
   become: yes
   roles:
     - nginx_ubuntu
+
+      #- hosts: nginx_web_server 
+      #  become: yes        #true
+  vars:
+    container_count: 
+    default_container_name: docker
+    default_container_image: andreysagurov/nginx
+    default_container_command: sleep 1d
+      
