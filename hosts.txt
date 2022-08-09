@@ -5,8 +5,7 @@
 3.126.50.83    ansible_user=ubuntu
 
 
-#18.184.114.58 ansible_ssh_port=2222 ansible_user=ubuntu
-#3.126.50.83   ansible_ssh_port=2222 ansible_user=ubuntu
+
 
 
 [hosts_to_add_key:vars]
