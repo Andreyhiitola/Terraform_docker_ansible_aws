@@ -8,12 +8,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-#  workflow_dispatch:
 
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  my_CI_CD
+  #build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,7 +22,7 @@ jobs:
     - Check my repository
       uses: actions/checkout@v3
     - name: Run ansible nginx
-      run: ansible -playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh /id?rsa/pub"    
+      run: ansible-playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh /id?rsa/pub"    
   
 my_deploy:
   runs-on: ubuntu-latest
