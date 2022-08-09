@@ -50,24 +50,7 @@
         #     tag: latest
       source: pull  
     register: z
-          #    - name: pull an image
-          #      docker_image:
-          #        name: nginx
-          #        source: pull  
-   
-        #  - name: Pull default Docker image
-        #    community.docker.docker_image:
-        #      name: "{{ default_container_image }}"
-        #      source: pull
-
-        #  - name: Create default containers
-        #    community.docker.docker_container:
-        #      name: "{{ default_container_name }}{{ item }}"
-        #      image: "{{ default_container_image }}"
-        #   command: "{{ default_container_command }}"
-        #     state: present
-        # with_sequence: count={{ container_count }}
-      
+     
   - name: Creating a Persistent Volume Dir
     file: 
       path: /var/www
@@ -93,36 +76,6 @@
         - "{{ nginx_file }}/index.html:/usr/share/nginx/html/index.html"
       
       
-          #    when: z.failed == false
-          #    when: z.failed == false
 
-
-
-            #  - name: Checking Pull Status
-            #    debug:
-            #      var: z
-
-            #  - name: Creating a Persistent Volume Dir
-            #    file:
-            #      path: /var/www                    
-            #      state: directory
-
-            #  - name: Copying the HTML code in the Directory
-            #    template:
-            #     src: index.j2.html                             
-            #     dest: "{{ nginx_file }}/index.html"  
-            #    notify: Restarted Launching NGINX Container
-  
-          #  - name: Launching NGINX Container
-          #    when: z.failed == false
-          #    docker_container:
-          #      name: nginx
-          #      image: andreysagurov/nginx
-          #      state: started
-          #     exposed_ports: 
-            #        - "80"
-            #      ports: 
-            #        - "9999:80"
-            #      volumes:            #        - "{{ nginx_file }}/index.html:/usr/share/nginx/html/index.html"
 
   
