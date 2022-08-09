@@ -6,15 +6,13 @@
     - key : "~/.ssh/id_rsa.pub"
 
   tasks:
-
   - name: "Copy the authorized key file from"
     authorized_key:
       user: "{{ansible_user}}"
       state: "{{status}}"
       key: "{{ lookup('file', '{{ key }}')}}"
-    
-  
-- name: "Playbook to Add Key to Newly Provisioned EC2 Instance"
+      
+- name: "NGINX"
   hosts: hosts_to_add_key
   become: yes
   roles:
