@@ -15,7 +15,7 @@ jobs:
     - name: Run a one-line script
       run : echo "Hello, world from testing new!" 
   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - Check my repository
+    - name: Check my repository
       uses: actions/checkout@v3
     - name: Run ansible nginx
       run: ansible-playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh /id?rsa/pub"    
