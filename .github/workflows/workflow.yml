@@ -16,7 +16,7 @@ jobs:
       run :  echo "Hello, world from testing new!" 
     
     - name: list folder  
-      run: ./Ansible/ls -la 
+      run: ./ls -la 
    
   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check my repository
