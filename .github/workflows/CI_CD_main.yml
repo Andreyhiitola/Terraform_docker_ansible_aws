@@ -43,7 +43,7 @@ jobs:
           
   
       - name: Run playbook
-        uses: dawidd6/action-ansible-playbook@v2
+      - uses: dawidd6/action-ansible-playbook@v2
         with:
       # Required, playbook filepath
            playbook: playbook_nginx.yaml --user ubuntu --key-file "${key}" -e "key=~/.ssh/id_rsa.pub"
