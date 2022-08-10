@@ -27,15 +27,11 @@ jobs:
     - name: Run ansible nginx
       run: ansible-playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh/id_rsa.pub"    
   
- #my_deploy:
- # runs-on: ubuntu-latest
- # needs: [ my_CI-CD ]
-
-
-
-
-      
-   #  - name: Run a multi-line script
-    #   run: |
-       #  echo Add other actions to build,
-        # echo test, and deploy your project.
+  #my_deploy:
+  #runs-on: ubuntu-latest
+  #needs: [ my_CI-CD ]
+     
+    #- name: Run a multi-line script
+    # run: |
+    #    echo Add other actions to build,
+     #   echo test, and deploy your project.
