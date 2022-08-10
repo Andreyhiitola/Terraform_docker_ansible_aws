@@ -41,8 +41,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-name CD
-
+  
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
