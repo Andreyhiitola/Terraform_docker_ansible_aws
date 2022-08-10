@@ -44,11 +44,11 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
         with:
       # Required, playbook filepath
-           playbook: playbook_nginx.yaml --user ubuntu --key-file "${SECRET_PEM}" -e "key=~/.ssh/id_rsa.pub"
+           playbook: playbook_nginx.yaml --user ubuntu --key-file "${MY_KEYPAIR.pem}" -e "key=~/.ssh/id_rsa.pub"
     # Optional, directory where playbooks live
            directory: ./Ansible
     # Optional, SSH private key
-           #MY_KEYPAIR.pem : ${{ SECRET_PEM }}
+           MY_KEYPAIR.pem : ${{ SECRET_PEM }}
     # Optional, literal inventory file contents
          #  inventory: |
         #   [all]
@@ -59,7 +59,7 @@ jobs:
     # Optional, SSH known hosts file content
         #   known_hosts: .known_hosts
     # Optional, encrypted vault password
-           vault_password: ${{secrets.VAULT_PASSWORD}}
+          # vault_password: ${{secrets.VAULT_PASSWORD}}
     # Optional, galaxy requirements filepath
            #requirements: galaxy-requirements.yml
     # Optional, additional flags to pass to ansible-playbook
