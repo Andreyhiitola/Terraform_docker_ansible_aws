@@ -23,7 +23,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
@@ -40,31 +39,32 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      -- name: Run playbook
-  uses: dawidd6/action-ansible-playbook@v2
-  with:
-    # Required, playbook filepath
-    playbook: deploy.yml
+          
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+      # Required, playbook filepath
+           playbook: deploy.yml
     # Optional, directory where playbooks live
-    directory: ./
+           directory: ./
     # Optional, SSH private key
-    key: ${{secrets.SSH_PRIVATE_KEY}}
+           key: ${{secrets.SSH_PRIVATE_KEY}}
     # Optional, literal inventory file contents
-    inventory: |
-      [all]
-      example.com
+           inventory: |
+             [all]
+             example.com
 
-      [group1]
-      example.com
+             [group1]
+             example.com
     # Optional, SSH known hosts file content
-    known_hosts: .known_hosts
+           known_hosts: .known_hosts
     # Optional, encrypted vault password
-    vault_password: ${{secrets.VAULT_PASSWORD}}
+           vault_password: ${{secrets.VAULT_PASSWORD}}
     # Optional, galaxy requirements filepath
-    requirements: galaxy-requirements.yml
+           requirements: galaxy-requirements.yml
     # Optional, additional flags to pass to ansible-playbook
-    options: |
-      --inventory .hosts
-      --limit group1
-      --extra-vars hello=there
-      --verbose
+           options: |
+             --inventory .hosts
+             --limit group1
+             --extra-vars hello=there
+             --verbose
