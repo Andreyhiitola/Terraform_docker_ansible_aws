@@ -46,7 +46,7 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
         with:
            # Required, playbook filepath
-           playbook: playbook_nginx.yaml --user ubuntu --key-file "${key}" -e "key=~/.ssh/id_rsa.pub"
+           playbook: playbook_nginx.yaml #--user ubuntu --key-file "${key}" -e "key=~/.ssh/id_rsa.pub"
           
            #playbook_nginx.yaml --user ubuntu --key-file "${key}" -e "key=~/.ssh/id_rsa.pub"
            # Optional, directory where playbooks live
@@ -62,7 +62,9 @@ jobs:
            # requirements: galaxy-requirements.yml
            # Optional, additional flags to pass to ansible-playbook
            options: |
-             --verbose
+             --verbose vvv
+             --user ubuntu
+             --key-file "${key}"
            # --inventory .hosts
            # --limit group1
            # --extra-vars  hello=there
