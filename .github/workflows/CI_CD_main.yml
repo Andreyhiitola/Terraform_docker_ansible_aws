@@ -50,7 +50,8 @@ jobs:
     key: ${{secrets.SSH_PRIVATE_KEY_pum}}
     
     vault_password: ${{secrets.VAULT_PASSWORD}}
-    # Optional, galaxy requirements filepath
+    # Optional, galaxy requirements filepath   
+    
     requirements: galaxy-requirements.yml
     # Optional, additional flags to pass to ansible-playbook
     options: |
