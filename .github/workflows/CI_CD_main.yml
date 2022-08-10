@@ -35,7 +35,7 @@ jobs:
       - name: pwd directory
         run: pwd
       - name:
-        run: chmod 0400 "{key}" > file1
+        run: chmod 0400 "${key}" > file1
       - name: list folder  key  
         run: ls -la 
       # Runs a set of commands using the runners shell
