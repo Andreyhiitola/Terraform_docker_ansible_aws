@@ -63,10 +63,10 @@ jobs:
            # Optional, additional flags to pass to ansible-playbook
            options: |
              
-             --user ubuntu
+             
              --key-file "${key}"
-           #--verbose vvv 
+           # --verbose vvv 
            # --inventory .hosts
            # --limit group1
            # --extra-vars  hello=there
-                    
+           # --user ubuntu  
