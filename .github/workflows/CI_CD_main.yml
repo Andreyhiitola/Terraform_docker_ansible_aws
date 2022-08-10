@@ -44,11 +44,11 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
         with:
       # Required, playbook filepath
-           playbook: playbook_nginx.yaml --user ubuntu --key-file ${{SECRET_PEM}} -e "key=~/.ssh/id_rsa.pub"
+           playbook: playbook_nginx.yaml --user ubuntu --key-file "${mykeypair.pem}" -e "key=~/.ssh/id_rsa.pub"
     # Optional, directory where playbooks live
            directory: ./Ansible
     # Optional, SSH private key
-       #    mykeypair.pem : ${{SECRET_PEM}}
+           mykeypair.pem : "${{SECRET_PEM}}"
     # Optional, literal inventory file contents
          #  inventory: |
         #   [all]
