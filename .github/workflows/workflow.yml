@@ -22,7 +22,7 @@ jobs:
       run: ls -la 
       
     - name: change directory
-      run: cd /home/runner/work/Terraform_docker_ansible_aws/Terraform_docker_ansible_aws/Ansible
+      run: cd /home/runner/work/Terraform_docker_ansible_aws/Ansible
    
   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check my repository
