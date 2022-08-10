@@ -20,6 +20,9 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+        MY_KEYPAIR_pem : ${{ SECRET_PEM }}
+      
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -44,7 +47,7 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
         with:
       # Required, playbook filepath
-           playbook: playbook_nginx.yaml --user ubuntu --key-file "${MY_KEYPAIR.pem}" -e "key=~/.ssh/id_rsa.pub"
+           playbook: playbook_nginx.yaml --user ubuntu --key-file "${MY_KEYPAIR_pem}" -e "key=~/.ssh/id_rsa.pub"
     # Optional, directory where playbooks live
            directory: ./Ansible
     # Optional, SSH private key
