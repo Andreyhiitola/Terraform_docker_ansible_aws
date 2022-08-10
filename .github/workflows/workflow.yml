@@ -22,8 +22,8 @@ jobs:
       run: ls -la 
            
   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Check my repository
-      uses: actions/checkout@v3
+   # - name: Check my repository
+    #  uses: actions/checkout@v3
     
    # - name: Run ansible nginx
    #   run: ansible-playbok playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh/id_rsa.pub"    
