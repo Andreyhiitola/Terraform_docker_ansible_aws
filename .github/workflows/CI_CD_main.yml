@@ -44,9 +44,9 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
         with:
       # Required, playbook filepath
-           playbook: playbook_nginx.yaml
+           playbook: ansible-playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh/id_rsa.pub"
     # Optional, directory where playbooks live
-           directory: ./
+           directory: ./Ansible
     # Optional, SSH private key
            key: ${{secrets.SSH_PRIVATE_KEY}}
     # Optional, literal inventory file contents
