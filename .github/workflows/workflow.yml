@@ -15,7 +15,7 @@ jobs:
     - name: Run a one-line script
       run :  echo "Hello, world from testing new!"
       
-    - name: change directory
+    - name: pwd directory
       run: pwd
       
     - name: list folder  
@@ -26,7 +26,7 @@ jobs:
       uses: actions/checkout@v3
     
     - name: Run ansible nginx
-      run: ./Ansible/ansible-playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh/id_rsa.pub"    
+      run: .Ansible/ansible-playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh/id_rsa.pub"    
   
  #my_deploy:
  # runs-on: ubuntu-latest
