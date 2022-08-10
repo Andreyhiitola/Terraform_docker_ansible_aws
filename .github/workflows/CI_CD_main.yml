@@ -61,10 +61,10 @@ jobs:
            # Optional, galaxy requirements filepath
            # requirements: galaxy-requirements.yml
            # Optional, additional flags to pass to ansible-playbook
-           options: |
+           #options: |
              
              
-             --key-file "${key}"
+           #  --key-file "${key}"
            # --verbose vvv 
            # --inventory .hosts
            # --limit group1
