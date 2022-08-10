@@ -17,13 +17,13 @@ jobs:
     
     - name: list folder  
       run: ls -la 
-      
+   
   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check my repository
       uses: actions/checkout@v3
-      
+    
     - name: Run ansible nginx
-      run: ./Ansible/playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh/id_rsa.pub"    
+      run: ./Ansible/ansible-playbook playbook_nginx.yaml --user ubuntu --key-file mykeypair.pem -e "key=~/.ssh/id_rsa.pub"    
   
  #my_deploy:
  # runs-on: ubuntu-latest
