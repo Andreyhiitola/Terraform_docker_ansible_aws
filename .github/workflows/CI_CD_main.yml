@@ -34,7 +34,7 @@ jobs:
    
       - name: pwd directory
         run: pwd
-      - name:
+      - name: Change mode
         run: chmod 0400 "${key}" > file1
       - name: list folder  key  
         run: ls -la 
