@@ -47,5 +47,5 @@ jobs:
           directory: ./Ansible
           playbook: playbook_nginx.yaml
           ssh_key_file_name: secret_id_rsa
-          verbose: 2 
+          verbose: 0 
      
