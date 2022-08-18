@@ -16,7 +16,7 @@ jobs:
         #- self-hosted
         #- label1  
     env:
-      DOCKER_IMAGE_NAME: "andreysagurov/nginx_HELLOWORLD"
+      DOCKER_IMAGE_NAME: "andreysagurov/nginxHELLOWORLD"
       DOCKER_LOGIN:       ${{ secrets.DOCKER_LOGIN }}
       DOCKER_PASSWORD:    ${{ secrets.DOCKER_PASSWORD }}
       
