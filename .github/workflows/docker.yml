@@ -12,7 +12,7 @@ jobs:
 
     runs-on:  ubuntu-latest
     env:
-      DOCKER_IMAGE_NAME: "andreysagurov/nginx_HELLOWORLD"
+      DOCKER_IMAGE_NAME: "andreysagurov/nginx"
       DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN  }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
