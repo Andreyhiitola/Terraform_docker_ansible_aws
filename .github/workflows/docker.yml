@@ -1,37 +1,33 @@
-name: Build & Push Docker Image CI
-#name: Build & Push Docker image with latest tag
+name: Build & Push Docker image with latest tag
 
 on:
   push:
     branches: [ main ]
-#on:
- # push:
-  #   tags:
-   #    - "v*,*,*"
-  
+  pull_request:
+    branches: [ main ]
+
 jobs:
+
   build_and_push:
 
-    runs-on: ubuntu-latest
-        #- self-hosted
-        #- label1  
+    runs-on:  ubuntu-latest
+    # - self-hosted
+    # - label1
     env:
-      DOCKER_IMAGE_NAME: "andreysagurov/nginxhelloworld"
-      DOCKER_LOGIN:       ${{ secrets.DOCKER_LOGIN }}
-      DOCKER_PASSWORD:    ${{ secrets.DOCKER_PASSWORD }}
-      
-      
+      DOCKER_IMAGE_NAME: "andreysagurov/nginx"
+      DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN  }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
     steps:
     - uses: actions/checkout@v2
-    - name: Set env
-      run: echo "VERSION=${GITHUB_REF#refs/tags/*}" >> $GITHUB_ENV
-    - name: Show environment variables
-      run: |
-        echo "DOCKER_IMAGE_NAME: ${DOCKER_IMAGE_NAME}"
-        echo "VERSION: ${VERSION}"
     - name: Docker login
       run: docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag "${DOCKER_IMAGE_NAME}:${{ env.Version }}"
+      run: docker build . --file Dockerfile --tag "${DOCKER_IMAGE_NAME}:latest"
     - name: Push the Docker image
-      run: docker push "${DOCKER_IMAGE_NAME}:${{ env.Version }}"
+      run: docker push "${DOCKER_IMAGE_NAME}:latest"
+
+
+
+
+
