@@ -12,7 +12,7 @@ jobs:
 
     runs-on:  ubuntu-latest
     env:
-      DOCKER_IMAGE_NAME: "andreysagurov/nginx"
+      DOCKER_IMAGE_NAME: "andreysagurov/nginx_HELLOWORLD"
       DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN  }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Docker login
         run: docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
       - name: Build the Docker image
-        run: docker build . --file ./Dockerfile_/Dockerfile --tag "${DOCKER_IMAGE_NAME}:latest"
+        run: docker build . --file Dockerfile --tag "${DOCKER_IMAGE_NAME}:latest"
       - name: Push the Docker image
         run: docker push "${DOCKER_IMAGE_NAME}:latest"
 
