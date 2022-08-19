@@ -46,7 +46,7 @@ jobs:
         # Required, playbook filepath
           playbook: playbook_nginx.yaml  
         # Optional, directory where playbooks live
- #         directory: ./
+          directory: ./Ansible
         # Optional, SSH private key
           key :  secret_id_rsa
         # Optional, literal inventory file contents
