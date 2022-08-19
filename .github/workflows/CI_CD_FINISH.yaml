@@ -48,5 +48,5 @@ jobs:
           playbook: playbook_nginx.yaml
           hosts: hosts.txt
           ssh_key_file_name: secret_id_rsa
-          verbose: 3 
+          verbose: 1
      
